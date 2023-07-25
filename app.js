@@ -28,7 +28,7 @@ function handleUserSearch(event) {
         getWeather(city);
         searchInput.value = "";
     } else {
-        alert("Please enter a city");
+        errorMessageEl.textContent = "Please enter a city name";
     }
     }
     function getWeather(city) {
