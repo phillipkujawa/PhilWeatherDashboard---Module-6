@@ -5,7 +5,7 @@ This is the module 6 challenge. In this challenge, I created a weather forecast 
 ## Live URL
 ![Alt text](screenshot.png)
 
-Live URL Link: https://phillipkujawa.github.io/philweatherdashboard---module-6/
+Live URL Link: https://phillipkujawa.github.io/PhilWeatherDashboard---Module-6/
 
 ## Contributor
 
