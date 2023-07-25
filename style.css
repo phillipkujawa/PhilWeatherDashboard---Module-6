@@ -1,0 +1,16 @@
+.full-width-container {
+  max-width: 100%;
+  padding: 0 15px;
+}
+.card forecast-container {
+  max-width: 25rem; /* adjust as necessary */
+}
+.card-body {
+  border: 1px solid black;
+}
+
+#current-weather forecast-container .row {
+  justify-content: start;
+  width: 100%;
+  
+}

@@ -11,16 +11,17 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <title>Weather Dashboard</title>
 </head>
 
 <body>
-  <header class="p-5 mb-4">
+  <header class="p-5 mb-4 bg-light">
     <h1 class="display-3">Weather Dashboard</h1>
     <p class="lead">A simple weather dashboard app</p>
     <p id="currentDay" class="lead"></p>
   </header>
-  <div class="container-fluid" style="max-width: 1300px">
+  <div class="container-fluid full-width-container">
     <div class="row">
       <aside class="col-lg-3 pb-3">
         <h2 id="form-heading" class="mt-1 h3 form-label">
@@ -32,8 +33,31 @@
             <input type="text" class="form-control" id="city" name="city" />
           </div>
           <button type="submit" id="search-btn" class="btn btn-primary">Search</button>
+          <div class="modal fade" id="clearStorageModal" tabindex="-1" aria-labelledby="clearStorageModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="clearStorageModalLabel">Clear Local Storage</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Are you sure you want to clear all search history? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" id="confirmClear">Clear</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#clearStorageModal">
+            Clear Search History
+          </button>
+          <div id="error-message" style="color:red;"></div>
         </form>
-        <div id="search-history" class="list-group"></div>
+        <hr />
+        <div id="search-history" class="list-group">
+        </div>
       </aside>
       <main class="col-lg-9">
         <div id="current-weather" class="card">
@@ -46,9 +70,10 @@
             <p id="current-uv"></p>
           </div>
         </div>
-        <div id="forecast" class="row row-cols-1 row-cols-md-5 g-4 mt-3"></div>
+        <div id="forecast-container">
+          <div id="forecast"></div>
+      </div>
       </main>
-
     </div>
   </div>
   <script src="app.js"></script>
